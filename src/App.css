@@ -9,7 +9,7 @@ header {
     top: 0;
     position: sticky;
     border: solid black 1px;
-    border-radius: 15%;
+    border-radius: 30%;
     background: gainsboro;
     opacity: 0.8;
 }
@@ -30,14 +30,23 @@ header {
     background-color: cornflowerblue;
 }
 
+button:hover {
+    background-color: cornflowerblue;
+    font-weight: bolder;
+}
+
 button {
     position: sticky;
     top: 40;
-    height: 100px;
+    height: 80px;
     width: 150px;
     border-radius: 15%;
     background-color: gainsboro;
     opacity: 0.8;
     position: sticky;
     margin-left: auto;
+}
+
+#bottomDiv {
+    height: 80px;
 }

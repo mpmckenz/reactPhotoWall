@@ -50,6 +50,7 @@ class App extends Component {
           ))}
         </div>
         <button onClick={this.handleLoadMoreImages}>Load More Images</button>
+        <div id="bottomDiv" />
       </React.Fragment>
     );
   }
