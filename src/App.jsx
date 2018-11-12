@@ -8,20 +8,25 @@ const PHOTO_URL = "https://picsum.photos/200?photo=";
 const PHOTO_LIST_URL = "https://picsum.photos/list";
 
 class App extends Component {
-  state = { photos: [] };
-  // , numberOfPhotostoRender: 10
-
-  // handleLoadMoreImages() {
-  //   this.setState(numberOfPhotostoRender += 10)
-  // }
+  state = { photos: [], numberOfPhotostoRender: 0 };
 
   componentDidMount() {
     fetch(PHOTO_LIST_URL)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(photoArr => this.setState({ photos: photoArr }));
+      .then(response => response.json())
+      .then(photoArr => {
+        this.setState({
+          photos: photoArr,
+          numberOfPhotostoRender: 10
+        });
+      });
   }
+
+  handleLoadMoreImages = event => {
+    this.setState(previousState => ({
+      numberOfPhotostoRender: previousState.numberOfPhotostoRender + 10
+    }));
+  };
+
   render() {
     const { photos = [] } = this.state;
     return (
@@ -35,8 +40,7 @@ class App extends Component {
           </p>
         </header>
         <div className="collage">
-          {/* slice(0, numberOfPhotostoRender)  */}
-          {photos.map(photo => (
+          {photos.slice(0, this.state.numberOfPhotostoRender).map(photo => (
             <img
               id={"allPhotos"}
               alt={photo.filename}
@@ -45,6 +49,7 @@ class App extends Component {
             />
           ))}
         </div>
+        <button onClick={this.handleLoadMoreImages}>Load More Images</button>
       </React.Fragment>
     );
   }

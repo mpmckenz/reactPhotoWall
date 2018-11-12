@@ -1,8 +1,21 @@
+:root {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
 header {
     text-align: center;
+    top: 0;
+    position: sticky;
+    border: solid black 1px;
+    border-radius: 15%;
+    background: gainsboro;
+    opacity: 0.8;
 }
 
 .collage {
+    text-align: center;
     width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -10,4 +23,21 @@ header {
 
 #allPhotos {
     padding: 10px;
+    border-radius: 10%;
+}
+
+#allPhotos:hover {
+    background-color: cornflowerblue;
+}
+
+button {
+    position: sticky;
+    top: 40;
+    height: 100px;
+    width: 150px;
+    border-radius: 15%;
+    background-color: gainsboro;
+    opacity: 0.8;
+    position: sticky;
+    margin-left: auto;
 }
