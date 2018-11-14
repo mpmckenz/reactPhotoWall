@@ -7,6 +7,9 @@ const PHOTO_URL = "https://picsum.photos/200?photo=";
 // about various photos.
 const PHOTO_LIST_URL = "https://picsum.photos/list";
 
+const test = { numberOne: "e", numberTwo: "d.r", thingThree: "3.f.5" };
+console.log(Object.entries(test)[1]);
+
 class App extends Component {
   state = { photos: [], numberOfPhotostoRender: 0 };
 
